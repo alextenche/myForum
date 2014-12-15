@@ -1,7 +1,7 @@
 <?php
 class Topic{
 	
-	//init DB variable
+	// init database variable
 	private $db;
 	
 	
@@ -22,24 +22,27 @@ class Topic{
 	}
 	
 	
-	public function getTotalTopics(){  //get total number of topics
+	// get total number of topics
+	public function getTotalTopics(){  
 		$this->db->query('SELECT * FROM topics');
 		$rows = $this->db->resultset();
 		return $this->db->rowCount();
 	}
 	
 	
-	public function getTotalCategories(){  //get total number of categories
+	// get total number of categories
+	public function getTotalCategories(){  
 		$this->db->query('SELECT * FROM categories');
 		$rows = $this->db->resultset();
 		return $this->db->rowCount();
 	}
 	
-	public function getTotalReplies($topic_id){  //get total number of replies
+	
+	// get total number of replies
+	public function getTotalReplies($topic_id){ 
 		$this->db->query('SELECT * FROM replies WHERE topic_id=' . $topic_id);
 		$rows = $this->db->resultset();
 		return $this->db->rowCount();
 	}
 
 }
-?>
