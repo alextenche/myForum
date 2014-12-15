@@ -2,12 +2,10 @@
 //db params
 define("DB_HOST", "localhost");
 define("DB_USER", "root");
-define("DB_PASS", "termopane");
-define("DB_NAME", "talkingspace");
+define("DB_PASS", "");
+define("DB_NAME", "myforum");
 
-define("SITE_TITLE", "Welcome to Talkingspace");
+define("SITE_TITLE", "Welcome to myForum");
 
 //paths
-define('BASE_URI', 'http://'.$_SERVER['SERVER_NAME'].'/_talkingspace/');
-
-?>
+define('BASE_URI', 'http://'.$_SERVER['SERVER_NAME'].'/myForum/');
