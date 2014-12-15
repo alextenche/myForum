@@ -1,6 +1,5 @@
 <?php include('includes/header.php'); ?>
 
-
 <form role="form">
 	<div class="form-group">
 		<label>Topic Title</label>

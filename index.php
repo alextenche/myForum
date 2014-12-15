@@ -13,4 +13,3 @@ $template->totalCategories = $topic->getTotalCategories();
 
 //display template
 echo $template;
-?>

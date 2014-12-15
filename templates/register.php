@@ -30,10 +30,8 @@
 		<label>About Me</label>
 		<textarea id="about" rows="6" cols="80" class="form-control" name="about" placeholder="Tell us about yourself (Optional)"></textarea>
 	</div>
-	
 	<input name="register" type="submit" class="btn btn-default" value="Register" />
 	
 </form>
-
 
 <?php include('includes/footer.php'); ?>
