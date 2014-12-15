@@ -38,6 +38,34 @@ class Topic{
 	}
 	
 	
+	// get topics by category
+	public function getByCategory($category_id){
+		echo 'intra si in asta';
+		$this->db->query("SELECT topics.*, categories.*, users.username, users.avatar, categories.name FROM topics 
+									INNER JOIN users ON topics.user_id = users.id
+									INNER JOIN categories ON topics.category_id = categories.id
+									WHERE topics.category_id = :category_id");
+		$this->db->bind(':category_id', $category_id);
+		
+		// assign result set
+		$results = $this->db->resultset();
+		
+		return $results;
+	}
+	
+	
+	// get category by id
+	public function getCategory($category_id){
+		$this->db->query("SELECT * FROM categories WHERE id = :category_id");
+		$this->db->bind(':category_id', $category_id);
+		
+		// assign row
+		$row = $this->db->single();
+		
+		return $row;
+	}
+	
+	
 	// get total number of replies
 	public function getTotalReplies($topic_id){ 
 		$this->db->query('SELECT * FROM replies WHERE topic_id=' . $topic_id);

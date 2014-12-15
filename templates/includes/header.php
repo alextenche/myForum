@@ -4,14 +4,17 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="alexTenche">
 
-    <title>Welcome to TalkingSpace</title>
+    <title>Welcome to myForum</title>
 
-    <!-- Bootstrap core CSS -->
     <link href="<?php echo BASE_URI; ?>templates/css/bootstrap.css" rel="stylesheet">
-	
-    <!-- Custom styles for this template -->
     <link href="<?php echo BASE_URI; ?>templates/css/custom.css" rel="stylesheet">
+	
+	<?php // check if title is set, if not assign it
+	if(!isset($title)){
+		$title = SITE_TITLE;
+	} ?>
 
   </head>
 
@@ -42,7 +45,7 @@
 			<div class="col-md-8">
 				<div class="main-col">
 					<div class="block">
-						<h1 class="pull-left">Welcome to TalkingSpace</h1>
+						<h1 class="pull-left"><?php echo $title; ?></h1>
 						<h4 class="pull-right">A simple PHP forum engine</h4>
 						<div class="clearfix"></div>
 						<hr>
