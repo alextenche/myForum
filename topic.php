@@ -10,9 +10,9 @@ $topic_id = $_GET['id'];
 $template = new Template('templates/topic.php');
 
 // assign vars
-$template->topic = topic->getTopic($topic_id);
-$template->replies = topic->getReplies($topic_id);
-$template->title = topic->getTopic($topic_id)->title;
+$template->topic = $topic->getTopic($topic_id);
+$template->replies = $topic->getReplies($topic_id);
+$template->title = $topic->getTopic($topic_id)->title;
 
 // display template
 echo $template;

@@ -1,6 +1,6 @@
 <?php include('includes/header.php'); ?>
 
-<form role="form" enctype="multipart/form-data" method="post" action="register.html">
+<form role="form" enctype="multipart/form-data" method="post" action="register.php">
 
 	<div class="form-group">
 		<label>Name*</label>

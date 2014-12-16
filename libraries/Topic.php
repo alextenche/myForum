@@ -89,13 +89,29 @@ class Topic{
 	public function getReplies($topic_id){
 		$this->db->query("SELECT replies.*, users.* FROM replies
 									INNER JOIN users ON replies.user_id = users.id
-									WHERE replies.topic_id = :id
+									WHERE replies.topic_id = :topic_id
 									ORDER BY create_date ASC");
 		$this->db->bind(':topic_id', $topic_id);
 		// assign row
-		$row = $this->db->single();
+		$results = $this->db->resultset();
 		
-		return $row;
+		return $results;
+	}
+	
+	
+	
+	// get topics by user
+	public function getByUser($user_id){
+		$this->db->query("SELECT topics.*, categories.*, users.username, users.avatar, categories.name FROM topics 
+									INNER JOIN users ON topics.user_id = users.id
+									INNER JOIN categories ON topics.category_id = categories.id
+									WHERE topics.user_id = :user_id");
+		$this->db->bind(':user_id', $user_id);
+		
+		// assign result set
+		$results = $this->db->resultset();
+		
+		return $results;
 	}
 	
 	

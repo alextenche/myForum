@@ -2,8 +2,8 @@
 -- version 4.1.14
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: 15 Dec 2014 la 11:47
+-- Host: 127.0.0.1
+-- Generation Time: 16 Dec 2014 la 20:51
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -56,7 +56,15 @@ CREATE TABLE IF NOT EXISTS `replies` (
   `body` text NOT NULL,
   `create_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Salvarea datelor din tabel `replies`
+--
+
+INSERT INTO `replies` (`id`, `topic_id`, `user_id`, `body`, `create_date`) VALUES
+(1, 2, 3, 'Me like this !', '2014-12-16 19:17:07'),
+(2, 1, 1, 'Me really like this !!', '2014-12-16 19:17:07');
 
 -- --------------------------------------------------------
 
@@ -73,7 +81,7 @@ CREATE TABLE IF NOT EXISTS `topics` (
   `last_activity` datetime NOT NULL,
   `create_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
 -- Salvarea datelor din tabel `topics`
@@ -81,7 +89,9 @@ CREATE TABLE IF NOT EXISTS `topics` (
 
 INSERT INTO `topics` (`id`, `category_id`, `user_id`, `title`, `body`, `last_activity`, `create_date`) VALUES
 (1, 3, 1, 'Favorite server side language', 'What is your favorite server side language', '0000-00-00 00:00:00', '2014-12-15 10:46:22'),
-(2, 4, 1, 'How did you learn HTML and CSS', 'How did you learn HTML and CSS', '0000-00-00 00:00:00', '2014-12-15 10:46:22');
+(2, 4, 1, 'How did you learn HTML and CSS', 'How did you learn HTML and CSS', '0000-00-00 00:00:00', '2014-12-15 10:46:22'),
+(3, 1, 3, 'Testing php is hard', 'Testing', '0000-00-00 00:00:00', '2014-12-15 19:42:04'),
+(4, 1, 2, 'Is silver overrated ?', 'No', '0000-00-00 00:00:00', '2014-12-16 19:25:06');
 
 -- --------------------------------------------------------
 
@@ -100,14 +110,16 @@ CREATE TABLE IF NOT EXISTS `users` (
   `last_activity` datetime NOT NULL,
   `join_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Salvarea datelor din tabel `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `avatar`, `username`, `password`, `about`, `last_activity`, `join_date`) VALUES
-(1, 'Alex Tenche', 'alex.tenche@gmail.com', 'tenche.jpg', 'alextenche', 'termopane', 'web dev in devenire :)', '0000-00-00 00:00:00', '2014-12-15 10:36:48');
+(1, 'Alex Tenche', 'alex.tenche@gmail.com', 'tenche.jpg', 'alextenche', 'termopane', 'web dev in devenire :)', '0000-00-00 00:00:00', '2014-12-15 10:36:48'),
+(2, 'Blade Daywalker', 'blade@gmail.com', 'blade.jpg', 'blade', 'termopane', 'He is the Daywalker', '0000-00-00 00:00:00', '2014-12-15 19:41:21'),
+(3, 'IronMan', 'iron.man@gmail.com', 'ironman.jpg\r\n', 'ironMan', 'termopane', 'He''s the Ironman', '0000-00-00 00:00:00', '2014-12-16 19:16:18');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
