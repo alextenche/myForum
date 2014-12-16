@@ -5,10 +5,10 @@
 		<div class="row">
 			<div class="col-md-2">
 				<div class="user-info">
-					<img class="avatar pull-left" src="img/gravatar.jpg"/>
+					<img class="avatar pull-left" src="<?php echo BASE_URI;?>images/<?php echo $topic->avatar; ?>"/>
 					<ul>
-						<li><strong>BradT81</strong></li>
-						<li>43 Posts</li>
+						<li><strong><?php echo $topic->username; ?></strong></li>
+						<li><?php echo userPostCount($topic->user_id);?> Posts</li>
 						<li><a href="profile.php">Profile</a></li>
 					</ul>
 				</div>
