@@ -23,6 +23,13 @@ if(isset($_POST['register'])){
 	} else {
 		$data['avatar'] = 'noimage.png';
 	}
+	
+	// register user
+	if($user->register($data)){
+		redirect('index.php', 'You are registered and can now log in', 'succress');
+	} else {
+		redirect('index.php', 'Something went worong with the registration', 'error');
+	}
 }
 
 //get template & assign vars
