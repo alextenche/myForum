@@ -40,7 +40,6 @@ class Topic{
 	
 	// get topics by category
 	public function getByCategory($category_id){
-		echo 'intra si in asta';
 		$this->db->query("SELECT topics.*, categories.*, users.username, users.avatar, categories.name FROM topics 
 									INNER JOIN users ON topics.user_id = users.id
 									INNER JOIN categories ON topics.category_id = categories.id
