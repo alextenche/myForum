@@ -5,11 +5,19 @@
 			<div class="sidebar">
 				<div class="block">
 					<h3>Login Form</h3>
-					<form role="form">
-							
+					<?php if(isLoggedIn()) : ?>
+						<div class="userdata">
+							Welcome, <?php echo getUser() ['username']; ?>
+						</div>
+						<br>
+						<form role="form" method="post" action="logout.php">
+							<input type="submit" name="do_logout"  class="btn btn_primary" value="Logout" />
+						</form>
+					<?php else :?>
+					<form role="form" method="post" action="login.php">
 						<div class="form-group">
 							<label>Username</label>
-							<input name="username "type="text" class="form-control" placeholder="Enter Username">
+							<input name="username" "type="text" class="form-control" placeholder="Enter Username">
 						</div>
 							
 						<div class="form-group">
@@ -17,9 +25,9 @@
 							<input name="password" type="password" class="form-control" placeholder="Enter Password">
 						</div>
 						<button name="do_login" type="submit" class="btn btn_primary">Login</button>
-						<a class="btn btn_default" href="register.html">Create Account</a>
-								
+						<a class="btn btn_default" href="register.php">Create Account</a>	
 					</form>
+					<?php endif; ?>
 				</div>
 						
 						
@@ -41,7 +49,5 @@
      
     </div><!-- /.container -->
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="js/bootstrap.js"></script>
   </body>
 </html>

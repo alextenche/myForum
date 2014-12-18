@@ -29,7 +29,7 @@
 	
 	<h3>Forum Statistics</h3>
 		<ul>
-			<li>Total number of Users: <strong>52</strong></li>
+			<li>Total number of Users: <strong><?php echo $totalUsers; ?></strong></li>
 			<li>Total number of Topics: <strong><?php echo $totalTopics; ?></strong></li>
 			<li>Total number of Categories: <strong><?php echo $totalCategories; ?></strong></li>
 		</ul>
